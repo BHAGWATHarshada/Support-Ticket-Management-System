@@ -1,5 +1,6 @@
 Support Ticket Management System
 
+
 User Flow
 
   - User registers and logs in
@@ -8,11 +9,11 @@ User Flow
   
   - User can view only their own tickets
   
-  - User can delete their own ticket (as per rules)
+  - User can delete their own ticket
   
   - User cannot update ticket status or priority
   
-  - User cannot view other users’ tickets
+  - User cannot view other users tickets
 
 Admin Flow
 
