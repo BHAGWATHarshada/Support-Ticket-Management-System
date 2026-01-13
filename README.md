@@ -37,13 +37,13 @@ Setup Steps
 
 Backend : 
 
-  - cd backend
+  - cd Backend
   - npm install
   - npm run dev
 
 Frontend :
 
-  - cd backend
+  - cd Frontend
   - npm install
   - npm run dev
     
