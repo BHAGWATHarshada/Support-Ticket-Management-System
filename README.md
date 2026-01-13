@@ -1,5 +1,27 @@
 Support Ticket Management System
 
+Tech Stack
+
+  - Frontend: React, Bootstrap
+
+  - Backend: Node.js, Express
+
+  - Database: MongoDB
+
+  - Authentication: JWT
+
+Features
+
+  - User authentication and authorization
+  
+  - Role-based access (User / Admin)
+  
+  - Support ticket creation and management
+  
+  - Secure APIs with JWT
+  
+  - Basic filtering and pagination for tickets
+
 
 User Flow
 
