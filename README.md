@@ -50,3 +50,5 @@ Admin Flow
   - Admin can delete any ticket
   
   - Admin cannot create tickets
+
+(.env is added only because its a demo )
