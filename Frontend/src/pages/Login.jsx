@@ -12,10 +12,25 @@ const Login = () => {
   const { login } = useAuth()
   const navigate = useNavigate()
 
+  const isValidEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+  }
+
   const submit = async (e) => {
     e.preventDefault()
-    setLoading(true)
     setError("")
+
+    if (!email || !password) {
+      setError("All fields are required")
+      return
+    }
+
+    if (!isValidEmail(email)) {
+      setError("Enter a valid email address")
+      return
+    }
+
+    setLoading(true)
     try {
       const res = await api.post("/auth/login", { email, password })
       login(res.data.token)

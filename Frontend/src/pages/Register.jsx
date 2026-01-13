@@ -10,10 +10,30 @@ const Register = () => {
 
   const navigate = useNavigate()
 
+  const isValidEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+  }
+
   const submit = async (e) => {
     e.preventDefault()
-    setLoading(true)
     setError("")
+
+    if (!email || !password) {
+      setError("All fields are required")
+      return
+    }
+
+    if (!isValidEmail(email)) {
+      setError("Enter a valid email address")
+      return
+    }
+
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters")
+      return
+    }
+
+    setLoading(true)
     try {
       await api.post("/auth/register", { email, password })
       navigate("/login")
