@@ -29,9 +29,19 @@ const TicketDetail = () => {
   }
 
   const deleteTicket = async () => {
+  if (ticket.status === "closed") {
+    alert("Closed tickets cannot be deleted")
+    return
+  }
+
+  try {
     await api.delete(`/tickets/${id}`)
     navigate("/tickets")
+  } catch (err) {
+    alert(err.response?.data?.message || "Delete failed")
   }
+}
+
 
   if (!ticket) return <div className="container mt-4">Loading...</div>
 
